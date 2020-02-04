@@ -88,7 +88,7 @@ I also highly encourage you to look into potential alterations to these commands
 
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
 
-Now these should take about 20 minutes for `idba_ud` and X minutes for `MEGAHIT`.
+Now these should take about 20 minutes for `idba_ud` and 4 minutes for `MEGAHIT`.
 
 ---
 
