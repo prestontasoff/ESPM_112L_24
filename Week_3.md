@@ -35,7 +35,17 @@ It's up to you to decide which one is best for your particular situation, based 
 ## First, we're going to set up a practice assembly. Navigate to `/class_data/practice_assembly` and take a look at what's there. 
 
 You'll notice there's two types of files here: `.fastq` and `.fa`. The `.fa` files are FASTA format, whereas the `.fastq` are in FASTQ format. You'll often see FASTA files with extensions like `.fa`, `.fasta`, `.fna`, and `.faa`. These all mean mostly the same thing, which is that it's in FASTA format. However, two are more specific: `fna` stands for **f**asta **n**ucleic **acid** (DNA FASTA) and `faa` stands for **f**asta **a**mino **a**cid (Protein FASTA).
-    - 
+
+Now you're going to be practicing genome assembly. You have two options here: assemble your `.fastq` files with `MEGAHIT`
+
+This is going to take a super long time, so you're not gonna want to have one terminal window open the whole time. Allow me to teach you about a nifty program called `tmux`.
+
+`tmux` allows you to make terminal windows that you can leave running (even when you close your connection!) and come back to later. It's really nice. There are other alternatives in bash, such as `nohup` and `screen`, but let's focus on this for now.
+```
+hello testing
+```
+
+- You're going to want to make a new window before you 
 
 ---
 
