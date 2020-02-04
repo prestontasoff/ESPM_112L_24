@@ -32,13 +32,13 @@ It's up to you to decide which one is best for your particular situation, based 
 
 # This week's material: Assembly and Assembly Statistics
 
-### First, we're going to set up a practice assembly. Navigate to `/class_data/practice_assembly` and take a look at what's there.
+## First, we're going to set up a practice assembly. Navigate to `/class_data/practice_assembly` and take a look at what's there. 
 
-
-- You'll notice there's two types of files here: `.fastq` and `.fa`. The `.fa` files are FASTA format, whereas the `.fastq` are in FASTQ format. You'll often see FASTA files with extensions like `.fa`, `.fasta`, `.fna`, and `.faa`. These all mean mostly the same thing, which is that it's in FASTA format. However, two are more specific: `fna` stands for **f**asta **n**ucleic **acid** (DNA FASTA) and `faa` stands for **f**asta **a**mino **a**cid (Protein FASTA).
+You'll notice there's two types of files here: `.fastq` and `.fa`. The `.fa` files are FASTA format, whereas the `.fastq` are in FASTQ format. You'll often see FASTA files with extensions like `.fa`, `.fasta`, `.fna`, and `.faa`. These all mean mostly the same thing, which is that it's in FASTA format. However, two are more specific: `fna` stands for **f**asta **n**ucleic **acid** (DNA FASTA) and `faa` stands for **f**asta **a**mino **a**cid (Protein FASTA).
     - 
 
 ---
+
 - Take a look at the directory for your sample (e.g. /class_data/S3_002_000X1 or similar). *If you don't remember this ask me for help!*
 
 - You'll see two subfolders now - `assembly.d` and `raw.d`. We've already assembled this data, since it's absolutely enormous and would take a really long time to assemble on the class server. You'll find the reads you were working with last week in `raw.d` and the pre-made assemblies in `assembly.d`.
