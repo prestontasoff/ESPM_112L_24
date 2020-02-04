@@ -20,6 +20,8 @@ For a nice example, see the image below from the paper mentioned above:
 As you can see, different assemblers win out over others when looking at particular metrics, but none is consistently better than all the others based on all metrics across different sample types. 
 It's up to you to decide which one is best for your particular situation, based on the particular traits of each assembler (which are well described in the Vollmers et al. paper above).
 
+Our lab uses a mixture of `MEGAHIT` and `idba_ud`, so I'll give you the option of running either of those today; both are installed on the class server.
+
 ---
 
 # Review: Quality and Trimming
@@ -107,7 +109,9 @@ mkdir ~/quast_output
 ```
 (It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
-Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this. I believe in you. 
+Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? If you have time, and your assembly is completed, try this on your completed assembly as well- how different are the stats? In which areas are they most different?
+
+How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this. I believe in you. 
 
 ---
 
