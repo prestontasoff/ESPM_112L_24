@@ -32,22 +32,64 @@ It's up to you to decide which one is best for your particular situation, based 
 
 # This week's material: Assembly and Assembly Statistics
 
+# Section 1: Assembly
+
 ## First, we're going to set up a practice assembly. Navigate to `/class_data/practice_assembly` and take a look at what's there. 
 
 You'll notice there's two types of files here: `.fastq` and `.fa`. The `.fa` files are FASTA format, whereas the `.fastq` are in FASTQ format. You'll often see FASTA files with extensions like `.fa`, `.fasta`, `.fna`, and `.faa`. These all mean mostly the same thing, which is that it's in FASTA format. However, two are more specific: `fna` stands for **f**asta **n**ucleic **acid** (DNA FASTA) and `faa` stands for **f**asta **a**mino **a**cid (Protein FASTA).
 
-Now you're going to be practicing genome assembly. You have two options here: assemble your `.fastq` files with `MEGAHIT`
+Now you're going to be practicing genome assembly. You have two options here: assemble your `.fastq` files with `MEGAHIT`, or assemble your `.fa` file with `idba_ud`. Choose one and stick with it! I'll give you help below.
 
-This is going to take a super long time, so you're not gonna want to have one terminal window open the whole time. Allow me to teach you about a nifty program called `tmux`.
+## Subsection: Tmux
+This is going to take a super long time to run, so you're not gonna want to have one terminal window open the whole time. Allow me to teach you about a nifty program called `tmux`.
 
 `tmux` allows you to make terminal windows that you can leave running (even when you close your connection!) and come back to later. It's really nice. There are other alternatives in bash, such as `nohup` and `screen`, but let's focus on this for now.
-```
-hello testing
-```
 
-- You're going to want to make a new window before you 
+
+- You're going to want to make a new window before you start anything. Try this:
+
+    - ```tmux new -s assembly```
+    
+- Congrats! Now you're in a new `tmux` window called 'assembly'. To exit this window and leave it running, press `CTRL+b`, then `d`. If you've done that and you want to get back, use:
+
+   - ```tmux attach -t assembly```
+   
+
+# IMPORTANT: Only one person per group should do the rest of this section!
+
+## Subsection: Assembly prep
+
+Now we're going to prepare to run an assembly. Choose your reads, and do the following:
+
+**If you're going to assemble .fastq files using MEGAHIT:**
+- ```ln -s /class_data/practice_assembly_data/*.fastq ~```
+
+**If you're going to assemble .fa files using idba_ud:**
+- ```ln -s /class_data/practice_assembly_data/*.fa ~```
+
+This will create what's called a *symbolic link* in your home directory (~) - it's like copying over a file, but you don't actually make a new copy. You can just see the filename and operate on it as if you had copied it. If you remove this link, the original will be safe and sound in its original directory.
+
+Now, we're going to do actual assembly. Remember, **only one person per group should execute one of the following commands! We only have so many compute resources.**
+
+I also highly encourage you to look into potential alterations to these commands, of which there are many. The commands I provided to you will work, but try using either of the following commands to see more parameters to play with, and please ask me about them in class! (The following commands show the help menus for these two assemblers.)
+
+(don't play with the number of threads though)
+
+```idba_ud -h```
+```megahit -h```
+
+### If you're assembling using `idba_ud`:
+```idba_ud --pre_correction --min_contig 500 -r 4_milli_trimmed_raw.fa --num_threads 4 -o 4milli_idba_ud_practice```
+
+### If you're assembling using `megahit`:
+```megahit -1 4milli_trimmed.R1.fastq -2 4milli_trimmed.R2.fastq -t 4 -m 0.13```
+(The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
+
+Now these should take about 20 minutes for `idba_ud` and X minutes for `MEGAHIT`.
 
 ---
+
+# Section 2: Assembly Statistics
 
 - Take a look at the directory for your sample (e.g. /class_data/S3_002_000X1 or similar). *If you don't remember this ask me for help!*
 
