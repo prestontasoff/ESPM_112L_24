@@ -98,14 +98,14 @@ Now these should take about 20 minutes for `idba_ud` and X minutes for `MEGAHIT`
 
 - We're going to do a little bit of post-assembly quality control using the scaffolds now, which is just as important as investigating the quality of the reads pre-assembly. 
 
-We'll do this by using `quast.py`- try it with the following command. 
+We'll do this by using `quast.py`- try it with the following commands. 
 
-(It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
 ```
 mkdir ~/quast_output
 /home/jwestrob/quast.py -t 1 [YOUR CONTIG FILENAME HERE] -o ~/quast_output
 ```
+(It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
 Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? (How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this.
 
