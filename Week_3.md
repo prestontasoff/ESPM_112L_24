@@ -83,6 +83,7 @@ I also highly encourage you to look into potential alterations to these commands
 
 ### If you're assembling using `megahit`:
 ```megahit -1 4milli_trimmed.R1.fastq -2 4milli_trimmed.R2.fastq -t 4 -m 0.13```
+
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
 
 Now these should take about 20 minutes for `idba_ud` and X minutes for `MEGAHIT`.
@@ -96,3 +97,22 @@ Now these should take about 20 minutes for `idba_ud` and X minutes for `MEGAHIT`
 - You'll see two subfolders now - `assembly.d` and `raw.d`. We've already assembled this data, since it's absolutely enormous and would take a really long time to assemble on the class server. You'll find the reads you were working with last week in `raw.d` and the pre-made assemblies in `assembly.d`.
 
 - We're going to do a little bit of post-assembly quality control using the scaffolds now, which is just as important as investigating the quality of the reads pre-assembly. 
+
+We'll do this by using `quast.py`- try it with the following command. 
+
+(It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
+
+```
+mkdir ~/quast_output
+/home/jwestrob/quast.py -t 1 [YOUR CONTIG FILENAME HERE] -o ~/quast_output
+```
+
+Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? (How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this.
+
+---
+
+You did it!
+
+![You get a genome!](https://i1.wp.com/i.imgflip.com/v80vq.jpg?resize=640%2C359&ssl=1)
+
+
