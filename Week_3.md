@@ -107,7 +107,7 @@ mkdir ~/quast_output
 ```
 (It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
-Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? (How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this.
+Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this. I believe in you. 
 
 ---
 
