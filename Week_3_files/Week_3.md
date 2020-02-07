@@ -78,6 +78,7 @@ I also highly encourage you to look into potential alterations to these commands
 (don't play with the number of threads though)
 
 ```idba_ud -h```
+
 ```megahit -h```
 
 ### If you're assembling using `idba_ud`:
