@@ -64,10 +64,10 @@ This is going to take a super long time to run, so you're not gonna want to have
 Now we're going to prepare to run an assembly. Choose your reads, and do the following:
 
 **If you're going to assemble .fastq files using MEGAHIT:**
-- ```ln -s /class_data/practice_assembly_data/*.fastq ~```
+- ```ln -s /class_data/practice_assembly/*.fastq ~```
 
 **If you're going to assemble .fa files using idba_ud:**
-- ```ln -s /class_data/practice_assembly_data/*.fa ~```
+- ```ln -s /class_data/practice_assembly/*.fa ~```
 
 This will create what's called a *symbolic link* in your home directory (~) - it's like copying over a file, but you don't actually make a new copy. You can just see the filename and operate on it as if you had copied it. If you remove this link, the original will be safe and sound in its original directory.
 
