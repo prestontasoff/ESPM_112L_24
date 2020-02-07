@@ -106,7 +106,7 @@ We'll do this by using `quast.py`- try it with the following commands.
 
 ```
 mkdir ~/quast_output
-/home/jwestrob/quast.py -t 1 [YOUR CONTIG FILENAME HERE] -o ~/quast_output
+/home/jwestrob/quast-5.0.2/quast.py -t 1 [YOUR CONTIG FILENAME HERE] -o ~/quast_output
 ```
 (It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
