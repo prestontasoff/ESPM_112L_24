@@ -28,7 +28,7 @@ Our lab uses a mixture of `MEGAHIT` and `idba_ud`, so I'll give you the option o
 
 - Last week, as you'll recall, we looked at how to investigate the quality of your reads with [FastQC](https://github.com/s-andrews/FastQC), as well as how to trim your reads based on quality using [Sickle](https://github.com/najoshi/sickle).
 
-- Since we subset the reads last time due to computational constraints, I've provided two example FastQC reports for you: One pre-trimming and one post-trimming. They're stored at`/home/jwestrob/fastqc_output/S3_002_pre_trimming_fastqc.html` and `/home/jwestrob/fastqc_output/S3_002_trimmed_fastqc.html`, and they're both also stored in this github repository. Try opening them with your browser and pulling them up side-by-side. What are the main differences you see? How dramatic is the difference in quality?
+- Since we subset the reads last time due to computational constraints, I've provided two example FastQC reports for you: One pre-trimming and one post-trimming. They're stored at`/home/jwestrob/fastqc_output/S3_002_pre_trimming_fastqc.html` and `/home/jwestrob/fastqc_output/S3_002_trimmed_fastqc.html`, and they're both also stored in this github repository. Try opening them with your browser and pulling them up side-by-side. What are the main differences you see? How dramatic is the difference in quality? (They shouldn't be terribly different)
 
 ---
 
