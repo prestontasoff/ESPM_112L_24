@@ -89,4 +89,4 @@ Okay, now comes the fun part. You're going to actually run the ESOM binning prog
 - Run the program to launch the GUI
     `./esomana`
     
- Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load ${html`*`}.wts".
+ Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load `*`.wts".
