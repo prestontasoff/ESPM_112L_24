@@ -42,7 +42,17 @@ How to set up X11 forwarding depends entirely on which operating system you're u
 
 # Section 2: Preparing files for ESOMs
 
-Now, I've actually run the ESOMs already. (They take a really long time- best to do that before class.) What you're going to be doing next is to get a file from <a href=class.ggkbase.berkeley.edu>class.ggkbase.berkeley.edu</a> (in your browser, not on the terminal) that indicates which scaffolds correspond to each bin. 
+Now, I've actually run the ESOMs already. (They take a really long time- best to do that before class.) You just need to gather a couple  of things.
+
+### Subsection 1: Grabbing all of the ESOM files and putting them in your home directory.
+
+You just need to copy the files over. (Only one person per group needs to do this, strictly speaking, though you all can if you like - the files aren't that large. Talk to me during lab if you're doing this.)
+
+`cp -r /class_data/[YOUR BABY]/esom_files ~`
+
+### Subsection 2: Generating `.cls` files
+
+What you're going to be doing next is to get a file from <a href=class.ggkbase.berkeley.edu>class.ggkbase.berkeley.edu</a> (in your browser, not on the terminal) that indicates which scaffolds correspond to each bin. 
 
 Only one person per group will need to do this.
 
@@ -50,3 +60,10 @@ Go to class.ggkbase.berkeley.edu, log in, and navigate to the project folder for
 
 ![download_scaf2bin](scaf2bin_ggkbase.png)
 
+Upload this to your home directory on class.ggkbase.berkeley.edu, either by using Putty to SFTP (Windows) or by using a SCP command on your terminal (Linux/Mac) like so:
+
+    `scp [BABY ID].scaffolds_to_bin.tsv [YOUR USERID]@class.ggkbase.berkeley.edu:/home/[YOUR USERID]`
+    
+Where `[BABY ID]` is the name of your baby (you'll see it in the name of the file you download from ggkbase) and `[YOUR USERID]` is, as you probably guessed, your username (student1, ... , studentX).
+
+Once that's downloaded, you're going to need to convert this to a `.cls` file so that the ESOM program can read it in. You're going to do this using a script I wrote, like so:
