@@ -60,6 +60,8 @@ Go to class.ggkbase.berkeley.edu, log in, and navigate to the project folder for
 
 ![download_scaf2bin](scaf2bin_ggkbase.png)
 
+**It is important that you don't rename this file for now!! Don't do it!!**
+
 Upload this to your home directory on class.ggkbase.berkeley.edu, either by using Putty to SFTP (Windows) or by using a SCP command on your terminal (Linux/Mac) like so:
 
     `scp [BABY ID].scaffolds_to_bin.tsv [YOUR USERID]@class.ggkbase.berkeley.edu:/home/[YOUR USERID]`
@@ -67,3 +69,24 @@ Upload this to your home directory on class.ggkbase.berkeley.edu, either by usin
 Where `[BABY ID]` is the name of your baby (you'll see it in the name of the file you download from ggkbase) and `[YOUR USERID]` is, as you probably guessed, your username (student1, ... , studentX).
 
 Once that's downloaded, you're going to need to convert this to a `.cls` file so that the ESOM program can read it in. You're going to do this using a script I wrote, like so:
+
+    `python3 /class_data/convert_scaf2bin.py [SCAFFOLDS 2 BIN FILE]`
+    
+which will create a file called `ggkbase_names.cls` in your current directory. Now, move that file to `~/esom_files`. 
+
+Good job. Proud of you.
+
+---
+
+# Section 3: Binning!!!!
+
+Okay, now comes the fun part. You're going to actually run the ESOM binning program! This is the GUI process I was talking about earlier. ONE PERSON per group should do the following, in your home directory (`cd ~`):
+
+
+- Create a symbolic link to the executable file for the ESOMana program:
+    `ln -s /opt/bin/bio/ESOM/bin/esomana .`
+    
+- Run the program to launch the GUI
+    `./esomana`
+    
+ Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load ${html`*`}.wts".
