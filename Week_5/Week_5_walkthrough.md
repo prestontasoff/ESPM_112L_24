@@ -96,3 +96,10 @@ Congratulations! Now let's start loading things. Navigate to the top left of you
 You'll see a colored map with some dots pop up now, like so:
 
 ![esom_init](esom_init.png)
+
+
+Now you're going to load the class information from your ggkbase bins. Go to "File -> Load .cls" and select "ggkbase_names.cls", which should be in your `esom_files/` folder. 
+
+Now, go and look at the 'Classes' tab in the bottom menu. You'll see a bunch of classes, but everything will have the same color- choose a color for each of your bins. After that's done, you should see something like this:
+
+![esom_colored](esom_colored.png)
