@@ -30,7 +30,7 @@ How to set up X11 forwarding depends entirely on which operating system you're u
 - Windows:
     - Download and install xming: https://sourceforge.net/projects/xming/
     - Edit Putty preferences:
-    
+    ![enable_putty](X11_putty.png)
     - Launch your connection as normal. Congratulations.
 
 - Chromebook:
