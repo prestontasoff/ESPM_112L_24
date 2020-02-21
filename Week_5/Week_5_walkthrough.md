@@ -84,9 +84,13 @@ Okay, now comes the fun part. You're going to actually run the ESOM binning prog
 
 
 - Create a symbolic link to the executable file for the ESOMana program:
+
     `ln -s /opt/bin/bio/ESOM/bin/esomana .`
     
 - Run the program to launch the GUI
+
     `./esomana`
     
- Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load `*`.wts".
+Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load `*`.wts". You'll find all the files in your `/home/[USERID]/esom_files` folder. If you don't have that folder, that means you didn't follow my instructions from earlier. Go look up.
+
+You'll see a colored map with some dots pop up now, like so:
