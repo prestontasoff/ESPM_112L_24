@@ -94,3 +94,5 @@ Okay, now comes the fun part. You're going to actually run the ESOM binning prog
 Congratulations! Now let's start loading things. Navigate to the top left of your window and select "File -> Load `*`.wts". You'll find all the files in your `/home/[USERID]/esom_files` folder. If you don't have that folder, that means you didn't follow my instructions from earlier. Go look up.
 
 You'll see a colored map with some dots pop up now, like so:
+
+![esom_init](esom_init.png)
