@@ -38,5 +38,15 @@ How to set up X11 forwarding depends entirely on which operating system you're u
     - If you really are determined to figure out how to do it, look here: https://superuser.com/questions/1037230/is-there-a-way-to-use-xterm-on-chromebook
     
     
+---
 
+# Section 2: Preparing files for ESOMs
+
+Now, I've actually run the ESOMs already. (They take a really long time- best to do that before class.) What you're going to be doing next is to get a file from <a href=class.ggkbase.berkeley.edu>class.ggkbase.berkeley.edu</a> (in your browser, not on the terminal) that indicates which scaffolds correspond to each bin. 
+
+Only one person per group will need to do this.
+
+Go to class.ggkbase.berkeley.edu, log in, and navigate to the project folder for your baby. You'll be downloading a 'scaffold2bin' file, which has information for each of the scaffolds in your project and their corresponding bin ID. Download it from this drop-down menu:
+
+![download_scaf2bin](scaf2bin_ggkbase.png)
 
