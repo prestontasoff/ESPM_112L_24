@@ -27,5 +27,16 @@ How to set up X11 forwarding depends entirely on which operating system you're u
     - Now, go to your terminal, type `ssh -X [YOUR USERNAME]@class.ggkbase.berkeley.edu`. Now you're done.
     
     
+- Windows:
+    - Download and install xming: https://sourceforge.net/projects/xming/
+    - Edit Putty preferences:
+    
+    - Launch your connection as normal. Congratulations.
+
+- Chromebook:
+    - Use one of the windows PCs in lab. Sorry.
+    - If you really are determined to figure out how to do it, look here: https://superuser.com/questions/1037230/is-there-a-way-to-use-xterm-on-chromebook
+    
+    
 
 
