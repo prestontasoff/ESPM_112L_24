@@ -103,3 +103,9 @@ Now you're going to load the class information from your ggkbase bins. Go to "Fi
 Now, go and look at the 'Classes' tab in the bottom menu. You'll see a bunch of classes, but everything will have the same color- choose a color for each of your bins. After that's done, you should see something like this:
 
 ![esom_colored](esom_colored.png)
+
+Now we're going to investigate individual bins and see how we can refine them. In your 'Classes' menu, for each class, there's a little box on the left. If you click it, it will make all the points on the ESOM map corresponding to that class bold, for easier viewing. Try it out, perhaps with a couple closely related bins.  
+
+Here, I've highlighted two closely related bins (at the family level, so kinda close)... notice how they're next to each other and intermingle a little bit?
+
+
