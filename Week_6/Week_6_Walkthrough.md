@@ -13,9 +13,9 @@ The python install on this system is a little messy right now, so we're not goin
 
 Please, if you would, enter the following commands in your system (you can just copy-paste):
 
-```echo "alias python=/home/jwestrob/.pyenv/shims/python" >> ~/.bashrc
+`echo "alias python=/home/jwestrob/.pyenv/shims/python" >> ~/.bashrc`
 
-source ~/.bashrc```
+`source ~/.bashrc`
 
 
 A clarifying point before we begin: I'm going to start referring to the identifier for each baby as BABY_ID from now on. 
