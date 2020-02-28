@@ -17,6 +17,8 @@ Please, if you would, enter the following commands in your system (you can just 
 
 `source ~/.bashrc`
 
+This will make it so that you're using the python I've installed, not the one on the system. Any questions, feel free to ask.
+
 
 A clarifying point before we begin: I'm going to start referring to the identifier for each baby as BABY_ID from now on. 
 For example, if your baby is baby 2, your baby ID is `S3_002_000X1`. For baby 3, it's `S3_003_000X1`, and so forth. Keep this in mind.
@@ -39,6 +41,12 @@ Find your `cls` file from last week, and run the following:
 An example command, saying for example that you are working with baby 10 (which none of you are):
 
 `python /class_data/cls_s2b.py my_esombins.cls S3_010_000X1`
+
+
+*important*: it's going to throw an error at you : `/home/jwestrob/.pyenv/versions/3.6.4/lib/python3.6/site-packages/pandas/compat/__init__.py:117: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.`
+
+Don't worry about it!!! You're fine! Keep going!
+
 
 Now you'll see a file, `[BABY_ID]_ESOMbins.scaffold2bin.tsv`, in the directory where you just ran this program. Type `ls` and you'll see it. (If you don't, call me over!)
 
