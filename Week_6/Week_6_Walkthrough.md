@@ -85,8 +85,12 @@ See how I have a comma-separated list containing the filenames for each of my th
 
 Make sure you're only using 3 threads! (`-t 3`) We don't have enough resources for you to do any more than that.
 
-Now you've got a new scaffolds2bin file- `[basename]_DAStool_scaffolds2bin.txt`. 
+Now you've got a new scaffolds2bin file- `[basename]_DAStool_scaffolds2bin.txt`. We're gonna upload this to ggKbase and refine your bins now.
 
 ---
+
+## Section 4: Uploading the new scaffold2bin file to ggKbase
+
+
 
 
