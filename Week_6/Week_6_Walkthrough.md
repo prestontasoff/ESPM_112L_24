@@ -87,10 +87,14 @@ Make sure you're only using 3 threads! (`-t 3`) We don't have enough resources f
 
 Now you've got a new scaffolds2bin file- `[basename]_DAStool_scaffolds2bin.txt`. We're gonna upload this to ggKbase and refine your bins now.
 
+Download this `scaffolds2bin.txt` file to your computer! We'll be uploading it to ggKbase momentarily.
+
 ---
 
 ## Section 4: Uploading the new scaffold2bin file to ggKbase
 
 
+Go to class.ggkbase.berkeley.edu, log in, and navigate to the project page for your baby. You're going to rebin this project now using your DASTool-consolidated bins. Navigate to 'Batch Rebinning' and click 'Rebin File', as so:
 
+![ggkbase_rebin](ggkbase_rebin.png)
 
