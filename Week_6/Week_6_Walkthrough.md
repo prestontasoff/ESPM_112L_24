@@ -85,7 +85,7 @@ See how I have a comma-separated list containing the filenames for each of my th
 
 Make sure you're only using 3 threads! (`-t 3`) We don't have enough resources for you to do any more than that.
 
-Now you've got a new scaffolds2bin file- `\[basename]\_DAStool\_scaffolds2bin.txt`. 
+Now you've got a new scaffolds2bin file- `[basename]_DAStool_scaffolds2bin.txt`. 
 
 ---
 
