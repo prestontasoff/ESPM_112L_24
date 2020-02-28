@@ -79,7 +79,7 @@ Now for the really cool bit. We're going to use DAStool to integrate the results
 
 Finally, now you're ready to run DASTool. Here's an example command:
 
-`/opt/bin/bio/dastool/DAS_Tool -i S3_010_000X1_maxbin.scaffolds2bin.tsv,S3_010_000X1_ESOMbins.scaffold2bin.tsv,S3_010_000X1.scaffolds_to_bin.tsv -c S3_010_000X1_scaffold_min1000.fasta -o baby10_dastool_test -t 3 --write_bins 1`
+`/opt/bin/bio/dastool/DAS_Tool -i S3_010_000X1_maxbin.scaffolds2bin.tsv,S3_010_000X1_ESOMbins.scaffold2bin.tsv,S3_010_000X1.scaffolds_to_bin.tsv -c S3_010_000X1_scaffold_min1000.fasta -o baby10_dastool_test -t 3`
 
 See how I have a comma-separated list containing the filenames for each of my three scaffold2bin files? You're going to need to do that. (DON'T copy the ones I put in above! They're for baby 10, which I use to test the labs before class. None of you are using baby 10.)
 
@@ -93,8 +93,25 @@ Download this `scaffolds2bin.txt` file to your computer! We'll be uploading it t
 
 ## Section 4: Uploading the new scaffold2bin file to ggKbase
 
+We're going to override the bins you made on ggKbase earlier with the new DASTool bins. If you want to save the bins you made earlier, you can just use the scaffold2bin file you downloaded last week, so don't fret!
 
 Go to class.ggkbase.berkeley.edu, log in, and navigate to the project page for your baby. You're going to rebin this project now using your DASTool-consolidated bins. Navigate to 'Batch Rebinning' and click 'Rebin File', as so:
 
 ![ggkbase_rebin](ggkbase_rebin.png)
+
+Now you're going to see a menu that looks like this:
+
+![ggkbase_dissolve](ggkbase_dissolve.png)
+
+Select "Add File", and upload your `scaffolds2bin.txt` file from DASTool. Now, click "Upload and Rebin" to upload the binning information. 
+
+Now you've got your bins up
+
+Now, go and look at these new bins - check their quality, and name them according to the taxonomy ggKbase has provided for you. If you see any mistakes (anomalous GC content/coverage/taxonomy), feel free to edit these bins!
+
+We'll be using these bins for the rest of the semester so you want to make sure they're solid.
+
+You did it! Feel free to explore more and look through these bins for interesting features. You can see full annotations for these genomes in ggKbase, which is super cool, so definitely take advantage of that and read through one or two!
+
+# YOU DID IT! 
 
