@@ -71,5 +71,22 @@ What you're going to need to do is to create a scaffold2bin file now using these
 
 Now for the really cool bit. We're going to use DAStool to integrate the results from all three binning methods into a single set of high-quality bins. Here's what you need to do:
 
-- get all your scaffold2bin files in a directory. Doesn't much matter what you call them, but make sure they're in the same folder.
+- Get all your scaffold2bin files in a directory. Doesn't much matter what you call them, but make sure they're in the same folder.
+
+- Choose a basename: all the output files from DASTool are going to start with this, so make sure it's something easily recognizable and distinct from the files you already have in your directory. This is specified by the `-o` option in DASTool.
+
+- Run a simple command to pull up the help menu: `/opt/bin/bio/dastool/DAS_Tool -h`. Look over the options. You're not required to use the options that I provide to you when you're running these commands. Do some seem useful? Do some seem like a bad idea? Try some different options out! (`-create_plots` won't work for now since we don't have R installed on the cluster. That'll be fixed by next week.)
+
+Finally, now you're ready to run DASTool. Here's an example command:
+
+`/opt/bin/bio/dastool/DAS_Tool -i S3_010_000X1_maxbin.scaffolds2bin.tsv,S3_010_000X1_ESOMbins.scaffold2bin.tsv,S3_010_000X1.scaffolds_to_bin.tsv -c S3_010_000X1_scaffold_min1000.fasta -o baby10_dastool_test -t 3 --write_bins 1`
+
+See how I have a comma-separated list containing the filenames for each of my three scaffold2bin files? You're going to need to do that. (DON'T copy the ones I put in above! They're for baby 10, which I use to test the labs before class. None of you are using baby 10.)
+
+Make sure you're only using 3 threads! (`-t 3`) We don't have enough resources for you to do any more than that.
+
+Now you've got a new scaffolds2bin file- `\[basename]\_DAStool\_scaffolds2bin.txt`. 
+
+---
+
 
