@@ -28,4 +28,4 @@ Phylogenetics is basically the process by which we estimate relationships betwee
 
 Log in to class.ggkbase.berkeley.edu on your browser, navigate to your baby's project page, and click "Genome Completeness -> Ribosomal Proteins" near the top of the page. You'll see a menu that looks like this:
 
-![ggkbase_rps3.jpg](ggkbase_rps3.jpg)
+![ggkbase_rps3.png](ggkbase_rps3.png)
