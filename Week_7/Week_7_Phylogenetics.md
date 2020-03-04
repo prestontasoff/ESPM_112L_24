@@ -31,6 +31,8 @@ Download your `scaffolds_to_bin.txt` file from DASTool that you generated last w
 
 These new bins are going to be named things like `S3_010_000X1_scaffolds_to_bin_tsv_012`, which is uninformative. You have the power to change that, though!! Look at the taxonomy that ggKbase assigned to your bin (see below for an example- 
 
+![ggkbase_tax.png](ggkbase_tax.png)
+
 # Section 1: Getting your sequences 
 
 Log in to class.ggkbase.berkeley.edu on your browser, navigate to your baby's project page, and click "Genome Completeness -> Ribosomal Proteins" near the top of the page. You'll see a menu that looks like this:
