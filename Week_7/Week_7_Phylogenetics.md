@@ -29,3 +29,13 @@ Phylogenetics is basically the process by which we estimate relationships betwee
 Log in to class.ggkbase.berkeley.edu on your browser, navigate to your baby's project page, and click "Genome Completeness -> Ribosomal Proteins" near the top of the page. You'll see a menu that looks like this:
 
 ![ggkbase_rps3.png](ggkbase_rps3.png)
+
+Click "DNA" and a file will be generated and downloaded to your computer. Now you're going to want to put that file on the cluster with scp. If you don't remember how to do that, call me over- otherwise I leave this as an exercise for the reader. Enjoy.
+
+# Section 2: Aligning your sequences
+
+Now log in to class.ggkbase.berkeley.edu on the terminal. You're going to use one of two programs to align these sequences, but let's look at some aspects of these programs first.
+
+Mafft is a popular aligner renowned for its accuracy and thoroughness when creating alignments. It takes a while, though, since it was written with accuracy in mind. Try aligning it with mafft and timing it (by putting 'time' in front of a command, your system will tell you how long it took to run):
+
+'
