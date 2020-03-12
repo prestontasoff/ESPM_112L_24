@@ -6,6 +6,13 @@ This week's lab is going to be a demonstration/instruction of how to go about in
 
 In our lab, we use several popular tools to look at interesting proteins, which each have their own advantages and disadvantages. Let's talk about them, and what they're each good at.
 
+## Goals for today:
+
+- Predict genes, ORFs using Prodigal
+- Learn how to use BLASTp/BLASTn (your choice)
+- Learn how to use Interpro and HMMscan
+- Start playing with KEGG and investigating the metabolic pathways your proteins are part of
+
 ---
 
 ## Tools to investigate proteins of interest:
@@ -14,5 +21,5 @@ In our lab, we use several popular tools to look at interesting proteins, which 
 
 <a href="https://www.ebi.ac.uk/interpro/search/sequence/">https://www.ebi.ac.uk/interpro/search/sequence/</a>
 
-This option is the best if you have a protein that's really unusual and you want to find out exactly what it is.
+This option is the best if you have a protein that's really unusual and you want to find out exactly what it is. Interproscan uses a large suite of HMMs (probabilistic models that we won't go over in detail today)
 
