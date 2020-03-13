@@ -61,10 +61,17 @@ Verify that your selected protein is real by clicking on it, like in the image b
 
 ![blastp.png](blastp.png)
 
+How well do the results cover your query?  Look at the colored bars in the top box to visualize this.  Do you get results in the description box that agree on what this protein might be?  Do the results have a functional annotation (some kind of specific protein) or does it simply say “hypothetical protein” or “unknown”?
+
+---
+
+# Interpro
 
 Now that you have a good ORF that you can trust is real, go ahead and navigate over to Interproscan (<a href="https://www.ebi.ac.uk/interpro/search/sequence/">https://www.ebi.ac.uk/interpro/search/sequence/</a>). Paste this amino acid sequence in as your query and wait for a little while - interpro takes a bit of time, but the results are really good and trustworthy.
 
-Now for a quick rundown of what interpro is going to show you:
+You'll get some cool results from interpro which are really interactive and highly detailed, if you have a real protein. If you have a protein with unknown function or that doesn't look like any well-characterized proteins, you might not. In that case, just go back to NCBI ORF finder and pick another protein and repeat this whole process. (If you've closed the window with NCBI ORF finder or just don't like it, you can always get these proteins from class.ggkbase pretty easily too.)
+
+Below is a run down of the kinds of information interpro will display for you:
 
 ---
 
@@ -86,4 +93,10 @@ Sites: groups of amino acids that confer certain characteristics upon a protein,
 
 ---
 
+# Last module: Looking things up in KEGG
 
+Now that you have a wealth of information about the structure and predicted information of your protein, go ahead and look it up in KEGG (<a href="http://www.genome.jp/kegg/pathway.html">http://www.genome.jp/kegg/pathway.html</a>). There are lots of different features in KEGG, which I'll go over in more detail in the video I'll post along with today's lab materials, so go look it up there if you're curious. Otherwise, feel free to explore.
+
+# Optional final task: Operon finding
+
+There are multiple ways to find operons in your data. One of the most straightforward is to look through the functional annotations on class.ggkbase.berkeley.edu for your organism by navigating to that organism's page, then clicking on a particular scaffold (remember to choose one with lots of features!). Remember, you're looking for lots of genes clustered closely together and which have similar functionality. Look for some, and if you find a nice operon let me know on Slack!
