@@ -52,9 +52,15 @@ Click on the link to this contig and download the DNA sequence for this contig. 
 
 You can use the standard genetic code (1), but may want to consider alternative codes, such as Bacterial, Archaeal, and Plant Plasmid (11).  A reasonable minimum ORF length is 300, but feel free to try other cutoffs.  Hit the submit button to see your potential ORFs.
 
-The results show all of the possible genes in all reading frames.  You can click on a gene in the viewer or in the list to get its particular sequence. Note: this is ALL of the possibilities across multiple reading frames, some of the resulting proteins are likely not real proteins. Verify that your selected protein is real by clicking on it, like in the image below, scrolling down to the bottom left of the page and selecting "BLAST". If your results show a bunch of other proteins with high sequence identity and defined function, congratulations! You got a nice protein. Keep working with it. Otherwise, find another one, rinse and repeat. The best candidates will have relatively little overlap with other predicted ORFs.
+The results show all of the possible genes in all reading frames.  You can click on a gene in the viewer or in the list to get its particular sequence. Note: this is ALL of the possibilities across multiple reading frames, some of the resulting proteins are likely not real proteins. 
+
 
 ![orf_finder.png](orf_finder.png)
+
+Verify that your selected protein is real by clicking on it, like in the image below, scrolling down to the bottom left of the page and selecting "BLAST". If your results show a bunch of other proteins with high sequence identity and defined function, congratulations! You got a nice protein. Keep working with it. Otherwise, find another one, rinse and repeat. The best candidates will have relatively little overlap with other predicted ORFs. All the standard parameters are just fine, so don't worry about changing anything once you see the page shown in the image below- just scroll down and click BLAST.
+
+![blastp.png](blastp.png)
+
 
 Now that you have a good ORF that you can trust is real, go ahead and navigate over to Interproscan (<a href="https://www.ebi.ac.uk/interpro/search/sequence/">https://www.ebi.ac.uk/interpro/search/sequence/</a>). Paste this amino acid sequence in as your query and wait for a little while - interpro takes a bit of time, but the results are really good and trustworthy.
 
