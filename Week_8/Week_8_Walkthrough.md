@@ -46,6 +46,38 @@ Go ahead and go over to <a href="class.ggkbase.berkeley.edu">class.ggkbase.berke
 
 ![get_big_scaffold.png](get_big_scaffold.png)
 
-Click on the link to this contig and download the DNA sequence for this contig.  Open the fasta file in a plain text editor; select all (cmd+a on Mac or ctrl+a on Windows?), and copy the sequence.  Go to NCBI ORF finder (<a href="https://www.ncbi.nlm.nih.gov/orffinder">https://www.ncbi.nlm.nih.gov/orffinder</a>) and paste the sequence into the Query box.
+Click on the link to this contig and download the DNA sequence for this contig.  Open the fasta file in a plain text editor; select all (cmd+a on Mac or ctrl+a on Windows/Linux), and copy the sequence.  Go to NCBI ORF finder (<a href="https://www.ncbi.nlm.nih.gov/orffinder">https://www.ncbi.nlm.nih.gov/orffinder</a>) and paste the sequence into the Query box.
 
 ![paste_in_sequence.png](paste_in_sequence.png)
+
+You can use the standard genetic code (1), but may want to consider alternative codes, such as Bacterial, Archaeal, and Plant Plasmid (11).  A reasonable minimum ORF length is 300, but feel free to try other cutoffs.  Hit the submit button to see your potential ORFs.
+
+The results show all of the possible genes in all reading frames.  You can click on a gene in the viewer or in the list to get its particular sequence. Note: this is ALL of the possibilities across multiple reading frames, some of the resulting proteins are likely not real proteins. Verify that your selected protein is real by clicking on it, like in the image below, scrolling down to the bottom left of the page and selecting "BLAST". If your results show a bunch of other proteins with high sequence identity and defined function, congratulations! You got a nice protein. Keep working with it. Otherwise, find another one, rinse and repeat. The best candidates will have relatively little overlap with other predicted ORFs.
+
+![orf_finder.png](orf_finder.png)
+
+Now that you have a good ORF that you can trust is real, go ahead and navigate over to Interproscan (<a href="https://www.ebi.ac.uk/interpro/search/sequence/">https://www.ebi.ac.uk/interpro/search/sequence/</a>). Paste this amino acid sequence in as your query and wait for a little while - interpro takes a bit of time, but the results are really good and trustworthy.
+
+Now for a quick rundown of what interpro is going to show you:
+
+---
+
+![F.png](F.png) 
+
+Protein family: in InterPro a protein family is a group of proteins that share a common evolutionary origin, reflected by their related functions and similarities in sequence or structure.  (The inclusion of protein structure is one of the differences between the general search in NCBI, that only considered sequence homology, and this search against InterPro)
+
+![D.png](D.png)
+
+Protein domain: distinct functional and/or structural units in a protein.  Usually they are responsible for particular functions or interaction, contributing to the overall role of a protein.  Domains may exist in a variety of biological contexts, where similar domains can be found in proteins with different functions.  
+
+![R.png](R.png)
+
+Repeats are typically short amino acid sequences that are repeated within a protein, and may confer binding or structural properties upon it.  
+
+![S.png](S.png)
+
+Sites: groups of amino acids that confer certain characteristics upon a protein, and may be important for its overall function.  Sites are usually rather small (only a few amino acids long).  Some types of sites in InterPro are active sites (involved in catalytic activity, binding sites (bind molecules or ions), post-translational modification sites (chemically modified after the protein is translated), and conserved sites (found in specific types of proteins, but whose function is unknown) 
+
+---
+
+
