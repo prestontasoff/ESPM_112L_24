@@ -59,6 +59,7 @@ Mac/Linux: open a terminal window/tab on your computer and enter the following:
 
 Windows users: Grab it off of WinSCP or PuTTY or whatever it is that you use. 
 
+
 ### Now that you know how to download things:
 
 Download the files `Primary_clustering_dendrogram.pdf` and `Secondary_clustering_dendrograms.pdf`. Let's take a look at them.
@@ -74,6 +75,44 @@ The secondary clustering dendrogram is the ANI clustering performed on each of t
 ![second_dendrogram.png](second_dendrogram.png)
 
 We generally consider bins that share 99% or greater ANI to be from very closely related organisms. In the above secondary clustering example, all of those bins would be considered to be from the same set of closely related organisms. In the below example, there are bins from two different organisms present:
+
+![third_dendrogram.png](third_dendrogram.png)
+
+If you don’t understand why there are two groups in this clustering please ask me. This is an important concept to understand. The important part is being able to read a dendrogram- the vertical line at 99% ANI indicates a dividing line between the two groups (on top, the Lentimicrobium group and on bottom, the Bacteroidetes group).
+
+# Using ANI clustering to make a dereplicated bin set
+
+This secondary clustering file is what we will use to create a dereplicated bin set across all 17 samples. We will consider bins that share 99% or greater ANI to be from the same organism type. With that in mind, all we need to do to make our dereplicated bin set is pick one bin from each cluster of bins that share >99% ANI to be that clusters representative bin. 
+
+We want the representative bins to be high quality, so pick the best bin by looking at each in ggKbase and picking the bin with the best single copy gene profile. If there are ties, pick one arbitrarily. 
+
+This dereplicated bin set will be useful for future analyses, but we will not be using it for the rest of this week’s assignment. 
+
+# Comparing synteny between bins with at least 99% ANI
+
+Synteny is the order of genes in an organism. Orthologer is a program that takes two ordered lists of **protein sequences**, compares them to each other, and displays genes in the first organism that are reciprocal BLAST best hits in the other. While this program can accept multiple genomes as an input, I recommend only two genomes at a time.
+
+Look at your file `Secondary_clustering_dendrograms.pdf`. Choose two genomes that are in the same primary cluster (i.e. in the same hierarchical clustering)- now, get the files for those bins from the folder `/class_data/baby_bins_prot` and copy them into your home directory. 
+
+Say you have chosen two Enterococcus faecalis bins, since that's a fairly large group of closely related genomes in this set. I like to make directories before I run analyses, so let's make one in our home directory and copy these bins into it:
+
+```
+mkdir ~/orthologer
+cp /class_data/baby_bins_prot/S3_004_000X1.scaffolds_to_bin.tsv-S3_004_000X1_Enterococcus_faecalis_38_4353.faa /class_data/baby_bins_prot/S3_007_000X1.scaffolds_to_bin.tsv-S3_007_000X1_Enterococcus_faecalis_38_99.faa ~/orthologer/
+```
+
+Now you've got those two (**protein**) fasta files in your `orthologer` directory, let's go ahead and run `orthologer.py` to compare them. You're going to have to use my installation of python, which is why I have those huge paths down below- just roll with it.
+
+Now take your two protein fastas (should end in `.faa`), which we'll call `[FASTA1]` and `[FASTA2]`, and do the following:
+
+```
+cd ~/orthologer
+/home/jwestrob/.pyenv/shims/python /home/jwestrob/bin/bioscripts/ctbBio/orthologer.py reference [FASTA1] [FASTA2] > genome_comparison.tsv
+```
+
+Now you have a file called `genome_comparison.tsv` that you can download with SCP and open up in excel/google sheets. Give it a look- see how large the syntenic blocks are that these two genomes share. Remember, you can look up gene names in ggkbase and see what they do. Can you find any operons that these two genomes share?
+
+
 
 
 
