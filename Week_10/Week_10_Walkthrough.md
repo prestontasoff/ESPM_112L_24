@@ -106,7 +106,9 @@ ex.:
 Then upload that file to iTOL. Detailed instructions on how to do this are in lab Remember, there are two ways to do that: 
 - you can download the treefile using `scp` onto your PC then upload that file to iTOL via your browser;
 - or you can copy paste the text of the treefile. On your terminal connected to class.ggkbase.berkeley.edu, type 
+
 `cat [YOUR TREEFILE]` 
+
 then copy the text that shows up! 
 
 (Again, there will be an example in the lecture video for this week on how to do this.)
