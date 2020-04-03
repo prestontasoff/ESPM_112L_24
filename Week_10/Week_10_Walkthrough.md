@@ -26,6 +26,10 @@ To save this summary you made, simply give it a name by clicking on Choose name 
 
 To investigate the proteins in each category, you can click on the numbers within the boxes. This will show the list of features which hit this list. From this list, you can find out which scaffold they’re on, they’re location, the sequence (for BLAST searches), the annotations, and more!
 
+## What lists are for
+
+Genome summaries and lists are intended to make it easier to visualize metabolic capacities across a large number of organisms and to share these visualizations with other researchers. You can make custom lists, as you'll learn about shortly, and can create genome summaries for various groups of genomes, making this a wonderful tool not only for extracting insights from your data but also to convey these insights to others.
+
 ## Using Custom ggKbase Lists
 
 We just used universal lists in our genome summary.  Lists work by using key terms. ggKbase searches these terms against all of the annotations in all called proteins in all selected projects. As shown in the List Keywords section, there is some ability to refine you lists to your liking using these keywords.
@@ -37,6 +41,21 @@ To make your own list, click on Lists at the top of the page. Next, click Create
 The three search boxes use boolean logic. The first box produces genes that have annotations matching one or more of the keywords (boolean OR). The second search box requires the genes annotation to match all the keywords (boolean AND). The last search box allows you to enter undesired keywords, excluding genes that have these keywords in their annotations (boolean NOT).
 
 ![list_menu.png](list_menu.png)
+
+Let's try, as an example, making a list that just looks at Rubisco, the protein that fixes CO2 in the Calvin cycle. There's CO2 fixation going on in the human gut, too! 
+
+ - Go to "Lists" at the top of the page, title your list, give it a description and a color.
+ 
+ - Scroll to the bottom, and you'll see the "List Keywords" menu. Type "Ribulose" and you'll see a bunch of options pop up; select "Ribulose-1,5-bisphosphate carboxylase" and then press the "Save list" button.
+ 
+Now you'll see a bunch of information on the next page. On the left-hand side of the page is a box that says "Projects"... next to that, click "Select all", then on the right of the page click the big blue button that says "Update". Now you're looking at all the projects you have access to, and you should see all the Rubisco proteins in that set!
+
+Now, there's one more thing to do. Rubisco is comprised of a large and a small subunit- for now, let's just look at the large subunit. In the search bar that says "**Exclude** these terms", type "small". Now your results are just for the large subunit of Rubisco! 
+
+You can download a FASTA file (either DNA or protein) with all of these results by clicking "Download list" (near the top of the page) and selecting the type of FASTA you'd like to download. Feel free to do that with the Rubisco results to test it out. 
+
+You're going to be using SCP to move things from your computer onto the cluster, so if you don't remember how to do that, A. talk to me and I'll help you, and B. write it down somewhere!
+
 
 ## Investigating Metabolic Pathways
 
@@ -56,13 +75,46 @@ Now let's go back to your genome summary on ggkbase.
 
 Click "Select lists", then navigate to "CO2 fixation" (if you can't find it, type it in to the search bar on the left). In the middle bar, right under the words "CO2 fixation", there's a blue button that says "select all". Click that, then click "Apply". 
 
-Now you can see the genes predicted to be involved in CO2 fixation pathways across all your selected genomes!
-
-Take a look at some other pathways- there are lots of pre-made lists, and if you think of particular metabolic pathways or biochemical transformations you'd like to look at, you can make your own!
+Now you can see the genes predicted to be involved in CO2 fixation pathways across all your selected genomes! This includes the Rubisco genes we were investigating earlier.
 
 ## Comparing to Public Databases and Making a Phylogeny
 
 Now that you have an idea about the distribution of a metabolic function across your genomes, you can compare one of the key genes in your pathway to publically available homologs of that gene. The point of doing so is to be more confident in whether or not it is the enzyme the annotation says it is. Gene-level annotation can be a messy process, and it's always good to check things you're particularly interested in.
 
-You can double click on the name of one of your lists, which will take you to the list of features for that gene. Here's an example 
+Look around for a particular gene you're interested in using the ggKbase lists, then make a custom list (as described above under "Using Custom ggKbase Lists") and download the resulting FASTA. Try and make sure you only have one gene in this list! Read through the annotations and make sure. (Again, i'll go over an example of how to do this in the lecture video.)
+
+Now, throw that file up on the cluster using SCP. Remember, you're transferring a file from your computer to the cluster, so your command should be in the format `scp filename studentid@class.ggkbase.berkeley.edu:~/destination_for_your_file`. Remember to include your own student ID and file destination (don't copy paste that command).
+
+Once that file is up in your home directory on the cluster, we're going to make an alignment out of it:
+
+`mafft --reorder --thread 4 [INPUT FILENAME] > [OUTPUT FILENAME]`
+
+ex.:
+
+`mafft --reorder --thread 4 rubisco_largechain_hits.faa > rubisco_largechain_ALN.mfaa`
+
+Remember that these file extensions are not necessary, I just include them to be explicit about what kind of data the file contains.
+
+Now that we have an alignment, let's make a quick tree out of it!
+
+`fasttree [YOUR ALIGNMENT] > [OUTPUT TREEFILE NAME]`
+
+ex.:
+
+`fasttree rubisco_largechain_ALN.mfaa > rubisco_largechain.treefile`
+
+Then upload that file to iTOL. Detailed instructions on how to do this are in lab Remember, there are two ways to do that: 
+- you can download the treefile using `scp` onto your PC then upload that file to iTOL via your browser;
+- or you can copy paste the text of the treefile. On your terminal connected to class.ggkbase.berkeley.edu, type `cat [YOUR TREEFILE]`, then copy the text that shows up! 
+
+(Again, there will be an example in the lecture video for this week on how to do this.)
+
+
+What do you see? Are the proteins organized mostly by phylogeny? (e.g. is a group dominated by Enterococcus or Bacteroidetes?) Is there a branch that's anomalously large in your phylogeny, potentially indicating that more than one type of gene is present?
+
+Now remember, you can get more closely related proteins from NCBI BLAST, but that's a little tricky so I'm going to go over that only in the lecture video.
+
+That's all for this week! Congrats on making it through!
+
+
 
