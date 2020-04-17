@@ -5,17 +5,19 @@ In this exercise you’ll be generating a VCF file, which is a file that contain
 IMPORTANT: To save time (and because of limited computational resources), only generate one VCF file per group in class this week. 
 
 ### Select a genome
-We are going to be digging a bit deeper into the population variation in one of our bins and it will be helpful to use a high quality bin for this purpose. Try to pick a bin that is marked as “near complete” with close to 51/51 bacterial single copy genes. Also try to pick a bin with relatively large scaffolds and between 30-100x coverage. The max contig column of the ggkbase organisms page can help you locate a good bin, which ideally will have a small number of large contigs. A bin with a max contig around 200,000 bp or greater would be a good choice. Download the selected bins contigs and upload them to class.ggkbase.
+We are going to be digging a bit deeper into the population variation in one of our bins and it will be helpful to use a high quality bin for this purpose. These are all located on the cluster at `/class_data/baby_bins`, but we're going to go to class.ggkbase.berkeley.edu on your browser to choose a bin to work with. Try to pick a bin that is marked as “near complete” with close to 51/51 bacterial single copy genes. Also try to pick a bin with relatively large scaffolds and between 30-100x coverage. The max contig column of the ggkbase organisms page can help you locate a good bin, which ideally will have a small number of large contigs. A bin with a max contig around 200,000 bp or greater would be a good choice. 
 
 ![max_contig_len.png](max_contig_len.png)
 
 ## Read mapping
 
-Read Mapping (same as last week)
+Read Mapping
 
 You will need to use the trimmed sequencing reads for the mapping. Trimmed sets for each sample are located here:
 
-/class_data/trimmed_fastqs
+`/class_data/S3_0XY_000X1/raw.d/`
+
+Remember to replace 'XY' with your sample number, ex.: `S3_002_000X1` or `S3_010_000X1`.
 
 To call variants with freebayes, first we have to map our reads to our bin and generate a SAM file.  To do this we’ll use bowtie2, a read alignment algorithm.  Bowtie2 generates a lot of files in the directory it is run in, so it is useful to make a directory for all of the outputs for each genome you are mapping to and run it in that directory.  Important: map reads from the sample the bin you picked is from.
 
@@ -23,7 +25,7 @@ On apatite (the server accessed through terminal, not ggKbase website), within y
 
 Bowtie2 first needs to build index files for the genome you are mapping to.  The command to do this is bowtie2-build.  It takes a DNA fasta file and the “stem” name of that file (the generated files are named using this “stem” and it is used later to tell bowtie2 what files to use).  An example is shown below, replace the fasta file and stem with your own.  
 
-Now we can run bowtie2 and generate the SAM file.  The alignment will most likely take a while, so make sure to run it from a screen session!
+Now we can run bowtie2 and generate the SAM file.  The alignment will most likely take a while (~15-30 min, depending on how big your genome bin file is and how many reads align to it), so make sure to run it from a tmux session! (I'll show you how to do that in the lecture video.)
 
 To run bowtie2:
     1. Run bowtie2 with the following arguments 
@@ -34,18 +36,17 @@ To run bowtie2:
         e. the output of bowtie2 (aka “standard output” or stdout and the standard error or stderr) must be redirected to a file.  This is done with a special redirect ‘2>’.  More on this here http://mywiki.wooledge.org/BashFAQ/055
         f. Redirect this output to the final SAM file 
         
+After that, we want to make sure that we don't leave a .sam file lying around (because it's enormous), so we use a program called `sambam` (really just a wrapper for a couple other commands) to do a couple other processing steps.
 
-I'll give an example of this in the lecture video, but I really want you to try this out so I'm not going to give you a pre-formatted command. If you don't get it right first try, don't worry- look at all your command line arguments and see if you can find out what's going wrong, otherwise just ask me!
+Here's an example command- remember to `cd` to your `~/lab12/bt2` directory (or whatever you called it) and ensure that your bowtie2 index has been built before doing this:
 
-## Processing your SAM file
+`bowtie2 -x [YOUR INDEX NAME] -1 /class_data/S3_002_000X1/raw.d/S3_002_000X1.R1.fastq.gz -2 /class_data/S3_002_000X1/raw.d/S3_002_000X1.R2.fastq.gz -p 6 2> mapped.log | sambam > [YOUR GENOME BIN NAME].sorted.bam`
+
 
 I'll be blunt: SAM files are a pain in the butt. They're absolutely enormous- they're records of how well each read matches to each position in your index (in this case, your genome bin).
 
-They're so big that, as standard practice, we eliminate them basically immediately and turn them into binarized versions (BAM files).
+They're so big that, as standard practice, we eliminate them basically immediately and turn them into binarized versions (BAM files). In this case, we don't even write the SAM file to disk at all.
 
-We do this with a script called 'sambam'- here's an example command:
-
-`sambam [YOUR SAM FILE].sam`
 
 # Calling variants with Freebayes
 
@@ -53,11 +54,11 @@ Calling variants with freebayes
 
 Running freebayes is fairly straightforward. We only need to provide our bin contigs as a –fasta-reference as well as our fully processed BAM file. However, we also want to filter our variants and only look at high quality calls. To do this, we will pipe our freebayes output with ‘|’ into vcfqualfilter, a script provided by freebayes that can filter variants based on a quality score. See the example below:
 	
-`/home/jwestrob/bin/freebayes-v1.3.0-1 --fasta-reference [YOUR GENOME BIN] [YOUR GENOME BIN].rmdup.bam | /home/jwestrob/bin/vcflib/scripts/vcfqualfilter --cutoff 20 > Cand_albi_P57072_V1_genomic.rmdup.bam.vcf`
+`/home/jwestrob/bin/freebayes-v1.3.0-1 --fasta-reference [YOUR GENOME BIN] [YOUR GENOME BIN].rmdup.bam | /home/jwestrob/bin/vcflib/scripts/vcfqualfilter --cutoff 20 > [YOUR GENOME BIN].rmdup.bam.vcf`
 
 The resulting VCF file contains your variant calls.
 
-Visualizing variants with IGV
+# Visualizing variants with IGV
 
 We’ve now called variants and can get a good idea of where there’s variation in our population! The only problem is its most likely a lot of data and difficult to interpret. To help, we will be visualizing our variants with Integrative Genomics Viewer (IGV).
 
