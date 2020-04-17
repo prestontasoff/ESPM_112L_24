@@ -28,12 +28,19 @@ Bowtie2 first needs to build index files for the genome you are mapping to.  The
 Now we can run bowtie2 and generate the SAM file.  The alignment will most likely take a while (~15-30 min, depending on how big your genome bin file is and how many reads align to it), so make sure to run it from a tmux session! (I'll show you how to do that in the lecture video.)
 
 To run bowtie2:
+
     1. Run bowtie2 with the following arguments 
+    
         a. –x : the stem of your index files built with bowtie2-build
+	
         b. -1 : the fastq file for the original forward reads for your metagenome sample
+	
         c. -2 : the fastq file for the original reverse reads for your metagenome sample
+	
         d. -p 6 : the number of threads bowtie will use. The 6 specifies 6 threads. This option will make bowtie run faster but also use more computational resources. Please do not use more than 6
+	
         e. the output of bowtie2 (aka “standard output” or stdout and the standard error or stderr) must be redirected to a file.  This is done with a special redirect ‘2>’.  More on this here http://mywiki.wooledge.org/BashFAQ/055
+	
         f. Redirect this output to the final SAM file 
         
 After that, we want to make sure that we don't leave a .sam file lying around (because it's enormous), so we use a program called `sambam` (really just a wrapper for a couple other commands) to do a couple other processing steps.
