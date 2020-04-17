@@ -61,7 +61,7 @@ Calling variants with freebayes
 
 Running freebayes is fairly straightforward. We only need to provide our bin contigs as a –fasta-reference as well as our fully processed BAM file. However, we also want to filter our variants and only look at high quality calls. To do this, we will pipe our freebayes output with ‘|’ into vcfqualfilter, a script provided by freebayes that can filter variants based on a quality score. See the example below:
 	
-`/home/jwestrob/bin/freebayes-v1.3.0-1 --fasta-reference [YOUR GENOME BIN] [YOUR GENOME BIN].rmdup.bam | /home/jwestrob/bin/vcflib/scripts/vcfqualfilter --cutoff 20 > [YOUR GENOME BIN].rmdup.bam.vcf`
+`/home/jwestrob/bin/freebayes-v1.3.0-1 --fasta-reference [YOUR GENOME BIN] [YOUR GENOME ALIGNMENT].sorted.bam | /home/jwestrob/bin/vcflib/scripts/vcfqualfilter --cutoff 20 > [YOUR GENOME BIN].sorted.bam.vcf`
 
 The resulting VCF file contains your variant calls.
 
