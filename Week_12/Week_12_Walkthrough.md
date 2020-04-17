@@ -21,9 +21,11 @@ Remember to replace 'XY' with your sample number, ex.: `S3_002_000X1` or `S3_010
 
 To call variants with freebayes, first we have to map our reads to our bin and generate a SAM file.  To do this we’ll use bowtie2, a read alignment algorithm.  Bowtie2 generates a lot of files in the directory it is run in, so it is useful to make a directory for all of the outputs for each genome you are mapping to and run it in that directory.  Important: map reads from the sample the bin you picked is from.
 
-On apatite (the server accessed through terminal, not ggKbase website), within your home directory make a lab13 directory and inside of this make a ‘bt2’ directory.
+On a terminal connected to class.ggkbase.berkeley.edu, within your home directory make a lab12 directory and inside of this make a ‘bt2’ directory.
 
-Bowtie2 first needs to build index files for the genome you are mapping to.  The command to do this is bowtie2-build.  It takes a DNA fasta file and the “stem” name of that file (the generated files are named using this “stem” and it is used later to tell bowtie2 what files to use).  An example is shown below, replace the fasta file and stem with your own.  
+Bowtie2 first needs to build index files for the genome you are mapping to.  The command to do this is bowtie2-build.  It takes a DNA fasta file and a name for your index files.  An example is shown below- remember to choose an index name  that's simple, easy and informative (balance these things as you see fit).
+
+`bowtie2-build [YOUR INPUT FASTA] [INDEX NAME]`
 
 Now we can run bowtie2 and generate the SAM file.  The alignment will most likely take a while (~15-30 min, depending on how big your genome bin file is and how many reads align to it), so make sure to run it from a tmux session! (I'll show you how to do that in the lecture video.)
 
