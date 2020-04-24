@@ -4,6 +4,10 @@ Today we're going to be using a tool called iRep (https://www.nature.com/article
 
 Here's the github page for iRep: https://github.com/christophertbrown/iRep
 
+# The following is a set of instructions for how to use iRep should you want to use it on your projects! For today we have one example that's ready for you to run iRep on- if you try it on your own you will not finish within, like, a day.
+
+I tried running iRep and it just takes such a long time. It took 3 hours with 40 threads (which you can not use!! don't use 40 threads!!) and so if we use 6 threads, as you are allowed to, it's gonna take even longer. So I have one example (working on a second, I'll update this when it's ready) and you can skip to the iRep step, although even that will take a very long time due to the way iRep was programmed. I highly recommend you just read this lab and look at the output files for iRep that are provided- if you feel this is something that would be useful, go ahead and incorporate it into your project. Otherwise, just learn a little and have fun.
+
 ## Delete old .bam files
 
 Before we do anything, make sure you delete the .bam files you generated last week. They're huge, and there's no need to keep them around unless you intend to use them 
@@ -47,9 +51,9 @@ Here's a breakdown of the options:
 	- s is the ordered SAM you just generated
 	- o is the base name for the output files (the name you’d like the output files to have, like the base name in your bowtie2 commands)
 
-and here's an example command:
+and here's an example command (Don't ask why there's three iReps in a row, just roll with it):
 
-```iRep -f [YOUR GENOME BIN] -s [YOUR ORDERED SAM FILE] -o [OUTPUT FILE BASENAME]```
+```/home/jwestrob/iRep/iRep/iRep -f [YOUR GENOME BIN] -s [YOUR ORDERED SAM FILE] -o [OUTPUT FILE BASENAME]```
 
 running iRep is really straightforward, and gives you two output files: a .pdf and a .tsv file. 
 
