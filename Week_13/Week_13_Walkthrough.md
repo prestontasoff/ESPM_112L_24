@@ -4,6 +4,10 @@ Today we're going to be using a tool called iRep (https://www.nature.com/article
 
 Here's the github page for iRep: https://github.com/christophertbrown/iRep
 
+## Delete old .bam files
+
+Before we do anything, make sure you delete the .bam files you generated last week. They're huge, and there's no need to keep them around unless you intend to use them 
+
 Let's jump right in!
 
 ## Selecting a genome 
@@ -22,5 +26,30 @@ We're going to be mapping reads back to this genome just like we did last week, 
 
 ```bowtie2-build [NAME OF YOUR GENOME FILE] [NAME OF YOUR INDEX]```
 
+## Mapping your reads
 
+Refer back to the lab 12 walkthrough (<a href=https://github.com/jwestrob/ESPM_112L/blob/master/Week_12/Week_12_Walkthrough.md>link here for your convenience</a>) for how to find reads, set up the mapping job, etc. 
+
+There is a slight difference between what we're doing this week and what we did last week. We're not going to be converting directly to a `bam` file, we're going to be writing to a `sam` file. Follow the procedure for Lab 12 just as it's written, but modify the command like so:
+
+```bowtie2 -x [YOUR INDEX NAME] -1 /class_data/S3_002_000X1/raw.d/S3_002_000X1.R1.fastq.gz -2 /class_data/S3_002_000X1/raw.d/S3_002_000X1.R2.fastq.gz -p 6 --reorder 2> mapped.log > [YOUR GENOME'S NAME].sam```
+
+
+## Running iRep
+
+iRep is really straightforward to run once you've got your FASTA contigs and your SAM file. 
+
+iRep is loaded on the cluster, so just type `iRep -h` to see the help menu and view all  the different options.
+
+Here's a breakdown of the options:
+
+	- f is the input fasta file (in this case for your genome bin)
+	- s is the ordered SAM you just generated
+	- o is the base name for the output files (the name you’d like the output files to have, like the base name in your bowtie2 commands)
+
+and here's an example command:
+
+```iRep -f [YOUR GENOME BIN] -s [YOUR ORDERED SAM FILE] -o [OUTPUT FILE BASENAME]```
+
+running iRep is really straightforward, and gives you two output files: a .pdf and a .tsv file. 
 
