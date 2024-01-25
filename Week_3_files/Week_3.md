@@ -99,7 +99,7 @@ Now these should take about 20 minutes for `idba_ud` and 4 minutes for `MEGAHIT`
 # Section 2: Assembly Statistics
 
 
-- Take a look at the directory for the pre-made assemblies (/class_data/practice_assembly/completed_assembly). *If you don't remember this ask me for help!*
+- Take a look at the directory for the pre-made assemblies (`/class_data/practice_assembly/completed_assembly`). *If you don't remember this ask me for help!*
 
 - We're going to do a little bit of post-assembly quality control using the scaffolds now, which is just as important as investigating the quality of the reads pre-assembly. 
 
