@@ -85,7 +85,7 @@ I also highly encourage you to look into potential alterations to these commands
 ```mkdir ~/assembly```
 
 ### If you're assembling using `idba_ud`:
-```idba_ud --pre_correction --min_contig 500 --read_level_1 ~/Cow_8_05_trim_clean.PE.1.fasta --read_level_2 ~/Cow_8_05_trim_clean.PE.2.fasta --num_threads 4 -o ~/assembly```
+```idba_ud --pre_correction --min_contig 500 -r merged_reads.fasta --num_threads 4 -o ~/assembly```
 
 ### If you're assembling using `megahit`:
 ```megahit -1 ~/Cow_8_05_trim_clean.PE.1.fasta -2 ~/Cow_8_05_trim_clean.PE.2.fasta -o ~/assembly --num-threads 4 -m 0.13```
