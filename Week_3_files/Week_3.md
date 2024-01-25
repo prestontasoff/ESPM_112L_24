@@ -98,9 +98,8 @@ Now these should take about 20 minutes for `idba_ud` and 4 minutes for `MEGAHIT`
 
 # Section 2: Assembly Statistics
 
-- Take a look at the directory for your sample (e.g. ~/assembly_practice or similar). *If you don't remember this ask me for help!*
 
-- You'll see two subfolders now - `assembly.d` and `raw.d`. We've already assembled this data, since it's absolutely enormous and would take a really long time to assemble on the class server. You'll find the reads you were working with last week in `raw.d` and the pre-made assemblies in `assembly.d`.
+- Take a look at the directory for the pre-made assemblies (/class_data/practice_assembly/completed_assembly). *If you don't remember this ask me for help!*
 
 - We're going to do a little bit of post-assembly quality control using the scaffolds now, which is just as important as investigating the quality of the reads pre-assembly. 
 
@@ -109,11 +108,12 @@ We'll do this by using `quast.py`- try it with the following commands.
 
 ```
 mkdir ~/quast_output
-/home/jwestrob/quast-5.0.2/quast.py -t 1 [YOUR CONTIG FILENAME HERE] -o ~/quast_output
+quast -t 1 /class_data/practice_assembly/completed_assembly/contig.fa -o ~/quast_output
 ```
+
 (It will tell you that `python-matplotlib is missing or corrupted.` Don't worry about it.)
 
-Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it. What do you see? If you have time, and your assembly is completed, try this on your completed assembly as well- how different are the stats? In which areas are they most different?
+Navigate into `quast_output`. Use ```realpath report.html``` to get the full path of the file, download it to your local machine, and visualize it (use Filezilla for this). What do you see? If you have time, and your assembly is completed, try this on your completed assembly as well? To do this run `quast -t 1 /class_data/practice_assembly/completed_assembly/Cow_8_05_scaffold_min1000.fa -o ~/quast_output`. How different are the stats? In which areas are they most different?
 
 How exactly to copy these files to your local machine is something I'll leave to you - feel free to ask me questions in class if you can't remember from last week how to do this. I believe in you. 
 
