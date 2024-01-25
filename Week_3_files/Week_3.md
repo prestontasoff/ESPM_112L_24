@@ -26,9 +26,9 @@ Our lab uses a mixture of `MEGAHIT` and `idba_ud`, so I'll give you the option o
 
 # Review: Quality and Trimming
 
-- Last week, as you'll recall, we looked at how to investigate the quality of your reads with [FastQC](https://github.com/s-andrews/FastQC), as well as how to trim your reads based on quality using [Sickle](https://github.com/najoshi/sickle).
+- Last week, as you'll recall, we looked at how to investigate the quality of your reads with [FastQC](https://github.com/s-andrews/FastQC), as well as how to trim your reads based on quality using [bbduk](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/).
 
-- Since we subset the reads last time due to computational constraints, I've provided two example FastQC reports for you: One pre-trimming and one post-trimming. They're stored at`/home/jwestrob/fastqc_output/S3_002_pre_trimming_fastqc.html` and `/home/jwestrob/fastqc_output/S3_002_trimmed_fastqc.html`, and they're both also stored in this github repository. Try opening them with your browser and pulling them up side-by-side. What are the main differences you see? How dramatic is the difference in quality? (They shouldn't be terribly different)
+- Since we subset the reads last time due to computational constraints, I've provided two example FastQC reports for you: One pre-trimming and one post-trimming. They're stored at`/home/ptasoff/raw.d`. Try opening them with your browser and pulling them up side-by-side. What are the main differences you see? How dramatic is the difference in quality? (They shouldn't be terribly different)
 
 ---
 
@@ -36,7 +36,7 @@ Our lab uses a mixture of `MEGAHIT` and `idba_ud`, so I'll give you the option o
 
 # Section 1: Assembly
 
-## First, we're going to set up a practice assembly. Navigate to `/class_data/practice_assembly` and take a look at what's there. 
+## First, we're going to set up a practice assembly. Navigate to `//class_data/practice_assembly/completed_assembly` and take a look at what's there. 
 
 You'll notice there's two types of files here: `.fastq` and `.fa`. The `.fa` files are FASTA format, whereas the `.fastq` are in FASTQ format. You'll often see FASTA files with extensions like `.fa`, `.fasta`, `.fna`, and `.faa`. These all mean mostly the same thing, which is that it's in FASTA format. However, two are more specific: `fna` stands for **f**asta **n**ucleic **acid** (DNA FASTA) and `faa` stands for **f**asta **a**mino **a**cid (Protein FASTA).
 
@@ -67,7 +67,7 @@ Now we're going to prepare to run an assembly. Choose your reads, and do the fol
 - ```ln -s /class_data/practice_assembly/*.fastq ~```
 
 **If you're going to assemble .fa files using idba_ud:**
-- ```ln -s /class_data/practice_assembly/*.fa ~```
+- ```ln -s /class_data/practice_assembly/*.fasta ~```
 
 This will create what's called a *symbolic link* in your home directory (~) - it's like copying over a file, but you don't actually make a new copy. You can just see the filename and operate on it as if you had copied it. If you remove this link, the original will be safe and sound in its original directory.
 
@@ -81,11 +81,14 @@ I also highly encourage you to look into potential alterations to these commands
 
 ```megahit -h```
 
+### First, make your output directory
+```mkdir ~/assembly```
+
 ### If you're assembling using `idba_ud`:
-```idba_ud --pre_correction --min_contig 500 -r 4_milli_trimmed_raw.fa --num_threads 4 -o 4milli_idba_ud_practice```
+```idba_ud --pre_correction --min_contig 500 --read_level_1 ~/Cow_8_05_trim_clean.PE.1.fasta --read_level_2 ~/Cow_8_05_trim_clean.PE.2.fasta --num_threads 4 -o ~/assembly```
 
 ### If you're assembling using `megahit`:
-```megahit -1 4milli_trimmed.R1.fastq -2 4milli_trimmed.R2.fastq -t 4 -m 0.13```
+```megahit -1 ~/Cow_8_05_trim_clean.PE.1.fasta -2 ~/Cow_8_05_trim_clean.PE.2.fasta -o ~/assembly --num-threads 4 -m 0.13```
 
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
 
@@ -95,7 +98,7 @@ Now these should take about 20 minutes for `idba_ud` and 4 minutes for `MEGAHIT`
 
 # Section 2: Assembly Statistics
 
-- Take a look at the directory for your sample (e.g. /class_data/S3_002_000X1 or similar). *If you don't remember this ask me for help!*
+- Take a look at the directory for your sample (e.g. ~/assembly_practice or similar). *If you don't remember this ask me for help!*
 
 - You'll see two subfolders now - `assembly.d` and `raw.d`. We've already assembled this data, since it's absolutely enormous and would take a really long time to assemble on the class server. You'll find the reads you were working with last week in `raw.d` and the pre-made assemblies in `assembly.d`.
 
