@@ -82,12 +82,13 @@ I also highly encourage you to look into potential alterations to these commands
 ```megahit -h```
 
 ### First, make your output directory
-```mkdir ~/assembly```
+`
 
 ### If you're assembling using `idba_ud`:
+```mkdir ~/assembly``
 ```idba_ud --pre_correction --min_contig 500 -r merged_reads.fasta --num_threads 4 -o ~/assembly```
 
-### If you're assembling using `megahit`:
+### If you're assembling using `megahit`, no need to make an output directory as it makes one already:
 ```megahit -1 ~/Cow_8_05_trim_clean.PE.1.fasta -2 ~/Cow_8_05_trim_clean.PE.2.fasta -o ~/assembly --num-threads 4 -m 0.13```
 
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
