@@ -134,9 +134,11 @@ You’ll notice a lot of different unfamiliar files, but two that should hopeful
 
 Let’s run contig_stats.pl to get a good idea of how well the assembly ran-
 
-```#This command will generate a file called 'scaffolds.contigstats.summary.txt
+```
+#This command will generate a file called 'scaffolds.contigstats.summary.txt
 mkdir ~/contig_stats
-contig_stats.pl -i scaffolds.fasta -o ~/contig_stats/scaffolds.contigstats```
+contig_stats.pl -i scaffolds.fasta -o ~/contig_stats/scaffolds.contigstats
+```
 
 Let’s look now at the resulting contig stats- try less `~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
 
