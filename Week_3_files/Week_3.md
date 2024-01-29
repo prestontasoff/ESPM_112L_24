@@ -130,14 +130,14 @@ Navigate to your output directory (e.g. `cd ~/assembly`), and take a look at the
 If you did not do the assembly in your group, take a look at the directory for the pre-made assemblies (`/class_data/practice_assembly/completed_assembly`). *If you don't remember this ask me for help!*
 
 
-You’ll notice a lot of different unfamiliar files, but two that should hopefully stand out: `contigs.fasta` and `scaffolds.fasta`. We want `scaffolds.fasta` - remember, contigs are stitched together to make scaffolds.
+You’ll notice a lot of different unfamiliar files, but two that should hopefully stand out: `contig.fa` and `scaffold.fa`. We want `scaffold.fa` - remember, contigs are stitched together to make scaffolds.
 
 Let’s run contig_stats.pl to get a good idea of how well the assembly ran-
 
 ```
 #This command will generate a file called 'scaffolds.contigstats.summary.txt
 mkdir ~/contig_stats
-contig_stats.pl -i scaffolds.fasta -o ~/contig_stats/scaffolds.contigstats
+contig_stats.pl -i scaffold.fa -o ~/contig_stats/scaffolds.contigstats
 ```
 
 Let’s look now at the resulting contig stats- try less `~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
@@ -173,9 +173,9 @@ Important stats to remember are:
 •	Number of large (50,000+ bp) contigs
 ### Getting assembly statistics for your sample
 •	Take a look at the assembly directory (e.g. `/class_data/assemblies/Cow_8_05_idba_ud` or your own ~/assembly). 
-•	Using the procedure above, generate contig stats for your scaffold file ([samplename]_scaffold.fa).
+•	Using the procedure above, generate contig stats for your scaffold file (scaffold.fa).
 # Questions for today’s turn-in:
-1.	What is the N50 of the contigs (not the scaffolds) from the example assembly? (Go back and repeat the procedure to run `contig_stats.pl` on the scaffolds from the example assembly, but choose `contigs.fasta` instead of `scaffolds.fasta`) 5pts
+1.	What is the N50 of the contigs (not the scaffolds) from the example assembly? (Go back and repeat the procedure to run `contig_stats.pl` on the scaffolds from the example assembly, but choose `contig.fa` instead of `scaffold.fa`) 5pts
 2.	What differentiates contigs from scaffolds? Should an assembly yield more scaffolds than contigs, or vice versa? 3pts
 3.	What is the length of the largest contig in your sample’s idba_ud assembly? 2pts
 4.	Provide the path (file location) of your example assembly output. 10pts
