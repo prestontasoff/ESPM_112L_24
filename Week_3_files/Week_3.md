@@ -99,8 +99,8 @@ or for Megahit:
 ```megahit -h```
 
 So you’re going to need at least two things to run the assembler:
-•	Reads to assemble (your `fastq` or `fasta` files)
-•	The name of an output directory
+-Reads to assemble (your `fastq` or `fasta` files)
+-The name of an output directory
 
 Here’s how to do that:
 
