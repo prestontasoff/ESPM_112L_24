@@ -89,9 +89,9 @@ I also highly encourage you to look into potential alterations to these commands
 
 (don't play with the number of threads though)
 
-```#This navigates to your home directory:
-cd ~
-#And this is to show the help page
+This navigates to your home directory:
+```cd ~
+#And this is to show the help page:
 idba_ud -h```
 
 or for Megahit:
