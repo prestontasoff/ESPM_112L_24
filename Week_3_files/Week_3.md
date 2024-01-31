@@ -90,13 +90,14 @@ I also highly encourage you to look into potential alterations to these commands
 (don't play with the number of threads though)
 
 This navigates to your home directory:
-```cd ~```
+`cd ~`
+
 #And this is to show the help page:
-```idba_ud -h```
+`idba_ud -h`
 
 or for Megahit:
 
-```megahit -h```
+`megahit -h`
 
 So you’re going to need at least two things to run the assembler:
 -Reads to assemble (your `fastq` or `fasta` files)
@@ -106,13 +107,12 @@ Here’s how to do that:
 
 
 ### First, make your output directory
-`
 
-### If you're assembling using `idba_ud`:
+#### If you're assembling using `idba_ud`:
 ```mkdir ~/assembly``
 ```idba_ud --pre_correction --min_contig 500 -r merged_reads.fasta --num_threads 4 -o ~/assembly```
 
-### If you're assembling using `megahit`, no need to make an output directory as it makes one already:
+#### If you're assembling using `megahit`, no need to make an output directory as it makes one already:
 ```megahit -1 ~/Cow_8_05_trim_clean.PE.1.fasta -2 ~/Cow_8_05_trim_clean.PE.2.fasta -o ~/assembly --num-threads 4 -m 0.13```
 
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
