@@ -108,7 +108,7 @@ Here’s how to do that:
 
 ### First, make your output directory
 
-#### If you're assembling using `idba_ud`:
+#### If you're assembling using `idba_ud` and only for idba_ud (if not skip this step):
 ```mkdir ~/assembly```
 
 Then do:
@@ -116,7 +116,7 @@ Then do:
 ```idba_ud --pre_correction --min_contig 500 -r merged_reads.fasta --num_threads 4 -o ~/assembly```
 
 #### If you're assembling using `megahit`, no need to make an output directory as it makes one already:
-```megahit -1 /class_data/practice_assembly/Cow_8_05_trim_clean.PE.1.fastq -2 /class_data/practice_assembly/Cow_8_05_trim_clean.PE.2.fastq -o ~/assembly --num-threads 4 -m 0.13```
+```megahit -1 /class_data/practice_assembly/Cow_8_05_trim_clean.PE.1.fastq -2 /class_data/practice_assembly/Cow_8_05_trim_clean.PE.2.fastq -o ~/assembly --num-cpu-threads 4 -m 0.13```
 
 (The `-m 0.13` flag limits the process to 13% of the system's memory, ensuring that we can run at least 7 of these assemblies on the server at once.)
 
