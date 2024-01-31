@@ -143,6 +143,8 @@ mkdir ~/contig_stats
 contig_stats.pl -i scaffold.fa -o ~/contig_stats/scaffolds.contigstats
 ```
 
+Note: You will have to provide the full path to the scaffold.fa file, ill let you figure this out based off some of the previous lines of code...
+
 Let’s look now at the resulting contig stats- try `less ~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
 
 ```
