@@ -143,7 +143,7 @@ mkdir ~/contig_stats
 contig_stats.pl -i scaffold.fa -o ~/contig_stats/scaffolds.contigstats
 ```
 
-Let’s look now at the resulting contig stats- try less `~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
+Let’s look now at the resulting contig stats- try `less ~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
 
 ```
 Length distribution
