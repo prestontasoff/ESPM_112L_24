@@ -110,6 +110,7 @@ Here’s how to do that:
 
 #### If you're assembling using `idba_ud`:
 ```mkdir ~/assembly```
+
 ```idba_ud --pre_correction --min_contig 500 -r merged_reads.fasta --num_threads 4 -o ~/assembly```
 
 #### If you're assembling using `megahit`, no need to make an output directory as it makes one already:
