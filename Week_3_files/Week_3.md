@@ -182,10 +182,10 @@ Important stats to remember are:
 •	Take a look at the assembly directory (e.g. `/class_data/assemblies/Cow_8_05_idba_ud` or your own ~/assembly). 
 •	Using the procedure above, generate contig stats for your scaffold file (scaffold.fa).
 # Questions for today’s turn-in:
-1.	What is the N50 of the contigs (not the scaffolds) from the example assembly? (Go back and repeat the procedure to run `contig_stats.pl` on the scaffolds from the example assembly, but choose `contig.fa` instead of `scaffold.fa`) 5pts
-2.	What differentiates contigs from scaffolds? Should an assembly yield more scaffolds than contigs, or vice versa? 3pts
-3.	What is the length of the largest contig in your sample’s idba_ud assembly? 2pts
-4.	Provide the path (file location) of your example assembly output. 10pts
+1.	What is the N50 of the contigs (not the scaffolds) from the example assembly? (Go back and repeat the procedure to run `contig_stats.pl` on the scaffolds from the example assembly, but choose `contig.fa` instead of `scaffold.fa`) 
+2.	What differentiates contigs from scaffolds? Should an assembly yield more scaffolds than contigs, or vice versa? 
+3.	What is the length of the largest contig in your sample’s idba_ud assembly? (Using the practice/completed assembly is okay for this)
+4.	Provide the path (file location) of your example assembly output. (Using the practice/completed assembly is okay for this)
 ---
 
 You did it!
