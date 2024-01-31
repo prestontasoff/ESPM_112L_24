@@ -142,7 +142,8 @@ contig_stats.pl -i scaffold.fa -o ~/contig_stats/scaffolds.contigstats
 
 Let’s look now at the resulting contig stats- try less `~/contig_stats/scaffolds.contigstats.summary.txt`. You’ll see something like this:
 
-```Length distribution
+```
+Length distribution
 ===================
 
 Range    	# sequences (%)	# bps (%)
@@ -161,7 +162,8 @@ General Information
 Total number of sequences: 78872
 Total number of bps:       29962121
 Average sequence length:   379.88 bps.
-N50:                       364 bps```
+N50:                       364 bps
+```
 
 
 
